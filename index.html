@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sephora $750 Shopping Gift Card</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #007bff, #28a745, #ffc107, #ffffff);
+            background-size: 400% 400%;
+            animation: gradient 8s ease infinite;
+            color: #333;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .menu {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #333;
+            font-size: 20px;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+            animation: bounce 2s infinite;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            color: #555;
+        }
+
+        .image {
+            width: 200px;
+            margin: 20px auto;
+            animation: pulse 2s infinite;
+        }
+
+        .email-form {
+            margin-top: 20px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: pulse 2s infinite;
+        }
+
+        .email-form input[type="email"] {
+            padding: 15px;
+            width: 270px;
+            font-size: 16px;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            transition: border-color 0.3s ease;
+            animation: bounce 1s infinite;
+        }
+
+        .email-form input[type="email"]:focus {
+            border-color: #28a745;
+            outline: none;
+        }
+
+        .email-form button {
+            padding: 12px 25px;
+            font-size: 18px;
+            border: none;
+            background: linear-gradient(90deg, #28a745, #007bff);
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            animation: bounce 2s infinite;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .email-form button:hover {
+            box-shadow: 0px 0px 15px #ffc107;
+        }
+
+        .info {
+            font-size: 14px;
+            color: #888;
+            margin-top: 10px;
+        }
+
+        .countdown, .steps, .reviews, .popup {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .steps div, .reviews div {
+            margin: 10px;
+            padding: 10px;
+            animation: bounce 2s infinite;
+            background: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .popup {
+            background: #28a745;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+            animation: fadein 3s ease-out;
+        }
+
+        @keyframes fadein {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <!-- Updated with your affiliate link and sub ID -->
+        <a href="https://go4affm.com/c/?p=40201&o=18606&sub_id=1234">☰</a>
+    </div>
+
+    <div class="container">
+        <h1 class="title">Claim Your Sephora $750 Shopping Gift Card</h1>
+        <p class="subtitle">Hurry up! Limited time offer.</p>
+
+        <img src="https://i.ibb.co/fvXRySC/f42628030692.png" alt="Sephora Gift Card" class="image">
+
+        <div class="email-form">
+            <form id="emailForm">
+                <input type="email" id="email" placeholder="Enter your email" required>
+                <button type="submit">Claim Now</button>
+            </form>
+            <p class="info">Your information is secure and will not be shared.</p>
+        </div>
+
+        <div class="countdown">
+            <p>Offer ends in: <span id="timer"></span></p>
+        </div>
+
+        <div class="steps">
+            <h3>Steps to Claim:</h3>
+            <div>1. Enter your email.</div>
+            <div>2. Confirm your email on the next page.</div>
+            <div>3. Enjoy your prize!</div>
+        </div>
+
+        <div class="reviews">
+            <h3>What Others Say:</h3>
+            <div>"This is amazing! Thank you, Sephora!"</div>
+        </div>
+
+        <div class="popup">
+            John from California just won a Sephora $750 gift card!
+        </div>
+
+        <footer>
+            <p>Your Information is Safe & Secure.</p>
+            <p>No Hidden Fees or Costs.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Countdown Timer
+        const timerElement = document.getElementById('timer');
+        let timeLeft = 3600; // 1 hour in seconds
+
+        function updateTimer() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            timerElement.textContent = `${minutes}m ${seconds}s`;
+            timeLeft--;
+            if (timeLeft >= 0) {
+                setTimeout(updateTimer, 1000);
+            }
+        }
+        updateTimer();
+
+        // Form Submission
+        document.getElementById('emailForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            if (email) {
+                // Redirecting to affiliate link with sub ID
+                window.location.href = "https://go4affm.com/c/?p=40201&o=18606&sub_id=1234";
+            } else {
+                alert('Please enter your email address!');
+            }
+        });
+    </script>
+</body>
+</html>
